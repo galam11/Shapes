@@ -1,0 +1,9 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/galamar/programing/opp class/oop1_ex01/out/build/x64-Debug/cmake_install.cmake",
+		"/Users/galamar/programing/opp class/oop1_ex01/out/build/x64-Debug/include/cmake_install.cmake",
+		"/Users/galamar/programing/opp class/oop1_ex01/out/build/x64-Debug/src/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

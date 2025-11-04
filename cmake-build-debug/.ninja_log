@@ -1,0 +1,8 @@
+# ninja log v6
+2	15	1761475389950372585	/Users/galamar/programing/opp class/oop1_ex01/cmake-build-debug/CMakeFiles/cmake.verify_globs	895fdf095cd29c2d
+16	362	1761475389964839194	CMakeFiles/oop1_ex01_solution.dir/src/Utilities.cpp.o	e20e7501c96c83dd
+16	477	1761475389965083985	CMakeFiles/oop1_ex01_solution.dir/src/Vertex.cpp.o	88ee8dec64778e0e
+15	560	1761475389964354905	CMakeFiles/oop1_ex01_solution.dir/src/Board.cpp.o	f10aa428240d04ef
+17	760	1761475389965447067	CMakeFiles/oop1_ex01_solution.dir/src/main.cpp.o	28c4290bb316bcb5
+760	796	1761475390708605089	oop1_ex01_solution	c074f9be26f79d5d
+0	10	1761475408101228247	/Users/galamar/programing/opp class/oop1_ex01/cmake-build-debug/CMakeFiles/cmake.verify_globs	895fdf095cd29c2d

@@ -1,0 +1,5 @@
+string (TIMESTAMP MY_TIMESTAMP "%Y-%m-%d-%H-%M-%S")
+execute_process (COMMAND /opt/homebrew/bin/cmake --build "/Users/galamar/programing/opp class/oop1_ex01/out/build/x64-Debug" --target package_source)
+execute_process (COMMAND /opt/homebrew/bin/cmake -E copy "/Users/galamar/programing/opp class/oop1_ex01/out/build/x64-Debug/oop1_ex01_solution-ADD-YOUR-NAMES-HERE.zip" "/Users/galamar/programing/opp class/oop1_ex01_solution-ADD-YOUR-NAMES-HERE-${MY_TIMESTAMP}.zip")
+execute_process (COMMAND /opt/homebrew/bin/cmake -E echo "")
+execute_process (COMMAND /opt/homebrew/bin/cmake -E echo "***" /Users/galamar/programing/opp class/oop1_ex01_solution-ADD-YOUR-NAMES-HERE-${MY_TIMESTAMP}.zip "file created ***")

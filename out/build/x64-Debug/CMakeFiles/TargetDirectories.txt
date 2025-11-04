@@ -1,0 +1,15 @@
+/Users/galamar/programing/opp class/oop1_ex01/out/build/x64-Debug/CMakeFiles/oop1_ex01_solution.dir
+/Users/galamar/programing/opp class/oop1_ex01/out/build/x64-Debug/CMakeFiles/Zip.dir
+/Users/galamar/programing/opp class/oop1_ex01/out/build/x64-Debug/CMakeFiles/ZipBackup.dir
+/Users/galamar/programing/opp class/oop1_ex01/out/build/x64-Debug/CMakeFiles/package.dir
+/Users/galamar/programing/opp class/oop1_ex01/out/build/x64-Debug/CMakeFiles/package_source.dir
+/Users/galamar/programing/opp class/oop1_ex01/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+/Users/galamar/programing/opp class/oop1_ex01/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
+/Users/galamar/programing/opp class/oop1_ex01/out/build/x64-Debug/include/CMakeFiles/package.dir
+/Users/galamar/programing/opp class/oop1_ex01/out/build/x64-Debug/include/CMakeFiles/package_source.dir
+/Users/galamar/programing/opp class/oop1_ex01/out/build/x64-Debug/include/CMakeFiles/edit_cache.dir
+/Users/galamar/programing/opp class/oop1_ex01/out/build/x64-Debug/include/CMakeFiles/rebuild_cache.dir
+/Users/galamar/programing/opp class/oop1_ex01/out/build/x64-Debug/src/CMakeFiles/package.dir
+/Users/galamar/programing/opp class/oop1_ex01/out/build/x64-Debug/src/CMakeFiles/package_source.dir
+/Users/galamar/programing/opp class/oop1_ex01/out/build/x64-Debug/src/CMakeFiles/edit_cache.dir
+/Users/galamar/programing/opp class/oop1_ex01/out/build/x64-Debug/src/CMakeFiles/rebuild_cache.dir

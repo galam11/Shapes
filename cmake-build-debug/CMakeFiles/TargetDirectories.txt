@@ -1,0 +1,15 @@
+/Users/galamar/programing/opp class/oop1_ex01/cmake-build-debug/CMakeFiles/oop1_ex01_solution.dir
+/Users/galamar/programing/opp class/oop1_ex01/cmake-build-debug/CMakeFiles/Zip.dir
+/Users/galamar/programing/opp class/oop1_ex01/cmake-build-debug/CMakeFiles/ZipBackup.dir
+/Users/galamar/programing/opp class/oop1_ex01/cmake-build-debug/CMakeFiles/package.dir
+/Users/galamar/programing/opp class/oop1_ex01/cmake-build-debug/CMakeFiles/package_source.dir
+/Users/galamar/programing/opp class/oop1_ex01/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/galamar/programing/opp class/oop1_ex01/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/galamar/programing/opp class/oop1_ex01/cmake-build-debug/include/CMakeFiles/package.dir
+/Users/galamar/programing/opp class/oop1_ex01/cmake-build-debug/include/CMakeFiles/package_source.dir
+/Users/galamar/programing/opp class/oop1_ex01/cmake-build-debug/include/CMakeFiles/edit_cache.dir
+/Users/galamar/programing/opp class/oop1_ex01/cmake-build-debug/include/CMakeFiles/rebuild_cache.dir
+/Users/galamar/programing/opp class/oop1_ex01/cmake-build-debug/src/CMakeFiles/package.dir
+/Users/galamar/programing/opp class/oop1_ex01/cmake-build-debug/src/CMakeFiles/package_source.dir
+/Users/galamar/programing/opp class/oop1_ex01/cmake-build-debug/src/CMakeFiles/edit_cache.dir
+/Users/galamar/programing/opp class/oop1_ex01/cmake-build-debug/src/CMakeFiles/rebuild_cache.dir
