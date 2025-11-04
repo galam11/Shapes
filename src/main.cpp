@@ -8,7 +8,7 @@
 #include "Vertex.h"
 #include "Board.h"
 
-#define RECTANGLE            0
+#define RECTANGLE            1
 #define EQUILATERAL_TRIANGLE 0
 #define FRAME                0
 #define DOUBLE_ARROW         0
