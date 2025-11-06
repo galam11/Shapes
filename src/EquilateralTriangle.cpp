@@ -1,4 +1,5 @@
 ﻿
+#include "macros.h"
 #include "Vertex.h"
 #include "Board.h"
 #include "Rectangle.h"
@@ -36,7 +37,7 @@ EquilateralTriangle::EquilateralTriangle(Vertex v, double length, bool isUp) :
 }
 
 // EquilateralTriangle only functions
-Vertex EquilateralTriangle::getVertex(int index) const //האם יש צורך לבדוק אינדקס?
+Vertex EquilateralTriangle::getVertex(int index) const
 {
 	if (index == 0)
 	{
@@ -56,7 +57,7 @@ double EquilateralTriangle::getLength() const
 
 double EquilateralTriangle::getHeight() const
 {
-	return (std::sqrt(3) / 2) * getLength();
+	return TRIANGLE_HEIGHT_COEFFICIENT * getLength();
 }
 
 // All shapes functions

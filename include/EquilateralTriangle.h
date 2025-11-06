@@ -31,7 +31,7 @@ public:
 	bool scale(double factor);
 
 	// Private utility functions
-private: //האם מיותר לכתוב שוב פרייבט?
+private:
 
 	bool validEquilateralTriangle(const Vertex& v0, const Vertex& v1, const Vertex& v2);
 

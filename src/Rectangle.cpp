@@ -5,7 +5,7 @@
 
 // Constructors
 Rectangle::Rectangle(const Vertex& bottomLeft, const Vertex& topRight) :
-    m_bottomLeft(20,10), m_topRight(30, 20) //האם השינוי בסדר?
+    m_bottomLeft(20,10), m_topRight(30, 20)
 {
     if (validRectangle(bottomLeft, topRight))
     {
