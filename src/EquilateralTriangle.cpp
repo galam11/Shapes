@@ -71,10 +71,13 @@ void EquilateralTriangle::draw(Board& board) const
 
 Rectangle EquilateralTriangle::getBoundingRectangle() const
 {
-	double height = getHeight();
+	
+	//double height = getHeight();
 	double length = getLength();
 	double center_x = getCenter().m_col;
-	double center_y = getCenter().m_row;
+	//double center_y = getCenter().m_row;
+
+
 	Vertex bottomLeft(center_x - (length / 2), center_y - (height / 2));
 	Vertex topRight(center_x + (length / 2), center_y + (height / 2));
 

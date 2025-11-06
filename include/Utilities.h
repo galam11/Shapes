@@ -3,6 +3,9 @@
 
 bool doubleEqual(double a, double b);
 
+double minValue(double a, double b); // return min value
+double maxValue(double a, double b); // return max value
+
 // Some helper functions for Board::drawLine()
 double distance(const Vertex& v1, const Vertex& v2);
 bool sameCol(const Vertex& v1, const Vertex& v2);
