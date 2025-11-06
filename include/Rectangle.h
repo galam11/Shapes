@@ -2,7 +2,7 @@
 
 #include "Vertex.h"
 #include "Board.h"
-
+/* test */
 class Rectangle {
 private: // private members
   Vertex m_bottomLeft, m_topRight;
