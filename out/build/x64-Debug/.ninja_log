@@ -1,0 +1,20 @@
+# ninja log v6
+76	16695	7841299627348470	CMakeFiles/oop1_ex01_solution.dir/src/main.cpp.obj	4095e794bf9893ce
+53	110	7841310340023432	C:/Users/f16it/source/repos/Shapes/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	d4a6e9a48538def8
+63	13548	7841299627189857	CMakeFiles/oop1_ex01_solution.dir/src/Utilities.cpp.obj	ac2733eb5484ae7b
+57	13698	7841299627105529	CMakeFiles/oop1_ex01_solution.dir/src/Ractangle.cpp.obj	41b82bb280cae9eb
+16696	17387	7841299793564007	oop1_ex01_solution.exe	4ef73f9a4cce4706
+53	14629	7841299627105529	CMakeFiles/oop1_ex01_solution.dir/src/Board.cpp.obj	64fc4f84be9e5028
+70	13705	7841299627283309	CMakeFiles/oop1_ex01_solution.dir/src/Vertex.cpp.obj	115d04aa1db136c7
+111	548	7841310342736366	build.ninja	a20f86500eefeccc
+65	112	7841310345072788	C:/Users/f16it/source/repos/Shapes/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	d4a6e9a48538def8
+135	14796	7841310345848921	CMakeFiles/oop1_ex01_solution.dir/src/Utilities.cpp.obj	ac2733eb5484ae7b
+128	15504	7841310345782826	CMakeFiles/oop1_ex01_solution.dir/src/Rectangle.cpp.obj	e93898ef631466fe
+142	15639	7841310345909949	CMakeFiles/oop1_ex01_solution.dir/src/Vertex.cpp.obj	115d04aa1db136c7
+121	15650	7841310345689951	CMakeFiles/oop1_ex01_solution.dir/src/EquilateralTriangle.cpp.obj	80aaf63c43cd4641
+115	16632	7841310345528762	CMakeFiles/oop1_ex01_solution.dir/src/Board.cpp.obj	64fc4f84be9e5028
+149	18542	7841310345990403	CMakeFiles/oop1_ex01_solution.dir/src/main.cpp.obj	4095e794bf9893ce
+18542	18979	7841310529883766	oop1_ex01_solution.exe	b1e8c50d86a5c7e5
+30	80	7841310585987999	C:/Users/f16it/source/repos/Shapes/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	d4a6e9a48538def8
+19	47	7841311837091127	C:/Users/f16it/source/repos/Shapes/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	d4a6e9a48538def8
+22	51	7841313348303980	C:/Users/f16it/source/repos/Shapes/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	d4a6e9a48538def8

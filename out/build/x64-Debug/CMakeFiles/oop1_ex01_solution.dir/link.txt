@@ -1,1 +1,0 @@
-/usr/bin/c++ -g -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -fsanitize=address CMakeFiles/oop1_ex01_solution.dir/src/Board.cpp.o CMakeFiles/oop1_ex01_solution.dir/src/Utilities.cpp.o CMakeFiles/oop1_ex01_solution.dir/src/Vertex.cpp.o CMakeFiles/oop1_ex01_solution.dir/src/main.cpp.o -o oop1_ex01_solution
