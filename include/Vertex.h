@@ -14,6 +14,9 @@ struct Vertex
     bool isHigherThan(const Vertex& other) const;
     bool isToTheRightOf(const Vertex& other) const;
     bool isValid() const;
+
+    // our functions
+    Vertex scalePointFromCenter(const Vertex& center, double factor) const;
 };
 
 std::istream& operator>>(std::istream& istr, Vertex& v);

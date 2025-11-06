@@ -27,3 +27,12 @@ std::ostream& operator<<(std::ostream& ostr, const Vertex& v)
 {
     return ostr << "(" << v.m_col << ", " << v.m_row << ")";
 }
+
+Vertex Vertex::scalePointFromCenter(const Vertex& center, double factor) const
+{
+    return Vertex
+    (
+        center.m_col + (m_col - center.m_col) * factor,
+        center.m_row + (m_row - center.m_row) * factor
+    );
+}

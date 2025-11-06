@@ -31,5 +31,4 @@ public:
   // private utility functions
 private:
   bool validRectangle(const Vertex& bottomLeft, const Vertex& topRight);
-  Vertex scalePoint(const Vertex& center, const Vertex& point, double factor);
 };

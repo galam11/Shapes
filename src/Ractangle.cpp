@@ -83,8 +83,8 @@ Vertex Rectangle::getCenter() const
 bool Rectangle::scale(double factor)
 {
     Vertex center = getCenter();
-    Vertex newTopRight = scalePoint(center, m_topRight, factor);
-    Vertex newBottomLeft = scalePoint(center, m_bottomLeft, factor);
+    Vertex newTopRight = m_topRight.scalePointFromCenter(center, factor);
+    Vertex newBottomLeft = m_bottomLeft.scalePointFromCenter(center, factor);
 
    if (validRectangle(newBottomLeft, newTopRight))
    {
@@ -106,11 +106,3 @@ bool Rectangle::validRectangle(const Vertex& bottomLeft, const Vertex& topRight)
         topRight.isHigherThan(bottomLeft);
 }
 
-Vertex Rectangle::scalePoint(const Vertex& center, const Vertex& point, double factor)
-{
-    return Vertex
-    (
-        center.m_col + (point.m_col - center.m_col) * factor,
-        center.m_row + (point.m_row - center.m_row) * factor
-    );
-}
