@@ -2,9 +2,7 @@
 #include "Rectangle.h"
 #include "Vertex.h"
 #include "Board.h"
-/*
-    THIS IS A TEST FOR GIT
-*/
+
 // Constructors
 Rectangle::Rectangle(const Vertex& bottomLeft, const Vertex& topRight)
 {
