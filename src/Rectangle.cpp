@@ -4,8 +4,7 @@
 #include "Board.h"
 
 // Constructors
-Rectangle::Rectangle(const Vertex& bottomLeft, const Vertex& topRight) :
-    m_bottomLeft(20,10), m_topRight(30, 20)
+Rectangle::Rectangle(const Vertex& bottomLeft, const Vertex& topRight)
 {
     if (validRectangle(bottomLeft, topRight))
     {
@@ -20,7 +19,10 @@ Rectangle::Rectangle(double x, double y, double width, double height) :
     Rectangle(Vertex(x,y), Vertex(x + width, y + height)) { }
 
 Rectangle::Rectangle(const Vertex& center, double width, double height) :
-    Rectangle(Vertex(center.m_col - (width / 2), center.m_row - (height / 2)), Vertex(center.m_col + (width / 2), center.m_row + (height / 2))) { }
+    Rectangle(
+        Vertex(center.m_col - (width / 2), center.m_row - (height / 2)),
+        Vertex(center.m_col + (width / 2), center.m_row + (height / 2))
+    ) { }
 
 // Rectangle only functions
 Vertex Rectangle::getBottomLeft() const
@@ -96,9 +98,8 @@ bool Rectangle::scale(double factor)
    return false;
 }
 
-// Private utility functions
-
-bool Rectangle::validRectangle(const Vertex& bottomLeft, const Vertex& topRight)
+// Rectangle utility functions
+bool validRectangle(const Vertex& bottomLeft, const Vertex& topRight)
 {
     return  topRight.isValid() &&
             bottomLeft.isValid() &&

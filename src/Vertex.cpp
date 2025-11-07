@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+#include "Utilities.h"
+
 bool Vertex::isHigherThan(const Vertex& other) const
 {
     return m_row > other.m_row;
@@ -28,6 +30,8 @@ std::ostream& operator<<(std::ostream& ostr, const Vertex& v)
     return ostr << "(" << v.m_col << ", " << v.m_row << ")";
 }
 
+
+//vertex utility functions
 //scales a point by a given factor
 Vertex scalePoint(const Vertex& center, const Vertex& point, double factor)
 {
@@ -37,3 +41,6 @@ Vertex scalePoint(const Vertex& center, const Vertex& point, double factor)
         center.m_row + (point.m_row - center.m_row) * factor
     );
 }
+
+
+
