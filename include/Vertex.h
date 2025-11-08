@@ -15,7 +15,7 @@ struct Vertex
     bool isToTheRightOf(const Vertex& other) const;
     bool isValid() const;
 };
-
+// utility functions
 Vertex scalePoint(const Vertex& center, const Vertex& point, double factor); //scales a point by a given factor
 
 std::istream& operator>>(std::istream& istr, Vertex& v);

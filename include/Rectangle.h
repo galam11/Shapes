@@ -7,7 +7,8 @@ class Rectangle {
 
 private: // Private members
 
-  Vertex m_bottomLeft, m_topRight;
+  Vertex m_bottomLeft = Vertex(20 ,10);
+  Vertex m_topRight = Vertex(30, 20);
 
 public:
 
@@ -30,9 +31,7 @@ public:
   double getArea() const;
   Vertex getCenter() const;
   bool scale(double factor);
-
-  // Private utility functions
-private:
-
-  bool validRectangle(const Vertex& bottomLeft, const Vertex& topRight);
 };
+
+// Rectangle utility functions
+bool validRectangle(const Vertex& bottomLeft, const Vertex& topRight);

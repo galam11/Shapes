@@ -7,7 +7,6 @@
 class EquilateralTriangle {
 
 private: // Private members
-
 	Vertex m_v0, m_v1, m_v2;
 
 public:
@@ -32,7 +31,6 @@ public:
 
 	// Private utility functions
 private:
-
 	bool validEquilateralTriangle(const Vertex& v0, const Vertex& v1, const Vertex& v2);
 
 };
