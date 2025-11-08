@@ -8,8 +8,8 @@ Rectangle::Rectangle(const Vertex& bottomLeft, const Vertex& topRight)
 {
     if (validRectangle(bottomLeft, topRight))
     {
-      m_bottomLeft = bottomLeft;
-      m_topRight = topRight;
+        m_bottomLeft = bottomLeft;
+        m_topRight = topRight;
     }
 }
 Rectangle::Rectangle(const Vertex vertices[2]) :
@@ -45,22 +45,22 @@ double Rectangle::getHeight() const
 }
 
 // All shapes functions
-
 void Rectangle::draw(Board& board) const
 {
     // calculate the two missing points on the rect
     Vertex topLeft(m_bottomLeft.m_col, m_topRight.m_row);
     Vertex bottomRight(m_topRight.m_col, m_bottomLeft.m_row);
 
+    //draw lines between all the points
     board.drawLine(m_bottomLeft, topLeft);
     board.drawLine(m_bottomLeft, bottomRight);
-
     board.drawLine(m_topRight, topLeft);
     board.drawLine(m_topRight, bottomRight);
 }
 
 Rectangle Rectangle::getBoundingRectangle() const
 {
+    // same as it self
     return Rectangle(m_bottomLeft, m_topRight);
 }
 
@@ -76,6 +76,7 @@ double Rectangle::getArea() const
 
 Vertex Rectangle::getCenter() const
 {
+  //the center of the rect is the avrage of the two points
     return Vertex(
       (m_bottomLeft.m_col + m_topRight.m_col) / 2 ,
       (m_bottomLeft.m_row + m_topRight.m_row) / 2
@@ -88,11 +89,11 @@ bool Rectangle::scale(double factor)
     Vertex newTopRight = scalePoint(center, m_topRight, factor);
     Vertex newBottomLeft = scalePoint(center, m_bottomLeft, factor);
 
+   //applay the scail if the scaild rect is a valid one
    if (validRectangle(newBottomLeft, newTopRight))
    {
        m_topRight = newTopRight;
        m_bottomLeft = newBottomLeft;
-
        return true;
    }
    return false;
