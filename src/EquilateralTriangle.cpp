@@ -22,7 +22,7 @@ EquilateralTriangle::EquilateralTriangle(Vertex v0, Vertex v1, Vertex v2) :
 EquilateralTriangle::EquilateralTriangle(const Vertex vertices[3]) :
 	EquilateralTriangle(vertices[0], vertices[1], vertices[2]) { }
 
-EquilateralTriangle::EquilateralTriangle(Vertex v, double length, bool isUp) :
+EquilateralTriangle::EquilateralTriangle(Vertex v, double length, bool isUp) :  //האם לא ארוך מידי?
 	EquilateralTriangle(v,
 
 					   (!length < 0) ? Vertex(v.m_col + length, v.m_row) 
@@ -34,6 +34,7 @@ EquilateralTriangle::EquilateralTriangle(Vertex v, double length, bool isUp) :
 									 : Vertex(-1, -1)) { }
 
 // EquilateralTriangle only functions
+
 Vertex EquilateralTriangle::getVertex(int index) const
 {
 	if (index == 0)
@@ -97,6 +98,7 @@ Vertex EquilateralTriangle::getCenter() const
 bool EquilateralTriangle::scale(double factor)
 {
 	Vertex center = getCenter();
+
 	Vertex new_v0 = scalePoint(center, m_v0, factor);
 	Vertex new_v1 = scalePoint(center, m_v1, factor);
 	Vertex new_v2 = scalePoint(center, m_v2, factor);

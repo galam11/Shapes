@@ -17,8 +17,8 @@ public:
     DoubleArrow (const EquilateralTriangle& first, double length);
 
     // DoubleArrow only functions
-    double getLength(double index) const;
-    double getHeight(double index) const;
+    double getLength(int index) const;
+    double getHeight(int index) const;
     Vertex getConnection() const;
 
     // All shapes functions
@@ -31,5 +31,8 @@ public:
 
     // Private utility functions
 private:
+
+    Vertex getTriangleTip(const EquilateralTriangle& triangle) const;
     bool validDoubleArrow(const EquilateralTriangle& et0, const EquilateralTriangle& et1);
+    bool triangleIsUp(const EquilateralTriangle& triangle);
 };
