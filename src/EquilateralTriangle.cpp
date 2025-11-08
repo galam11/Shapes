@@ -9,7 +9,7 @@
 
 // Constructors
 EquilateralTriangle::EquilateralTriangle(Vertex v0, Vertex v1, Vertex v2) :
-	m_v0(20, 20), m_v1(30, 20), m_v2(25, 20 + std::sqrt(75)) 
+	m_v0(20, 20), m_v1(30, 20), m_v2(25, 20 + DEFAULT_COEFFICIENT)
 {
 	if (validEquilateralTriangle(v0, v1, v2))
 	{
@@ -23,18 +23,15 @@ EquilateralTriangle::EquilateralTriangle(const Vertex vertices[3]) :
 	EquilateralTriangle(vertices[0], vertices[1], vertices[2]) { }
 
 EquilateralTriangle::EquilateralTriangle(Vertex v, double length, bool isUp) :
-	m_v0(20, 20), m_v1(30, 20), m_v2(25, 20 + std::sqrt(75))
-{
-	if (length > 0)
-	{
-		m_v0 = v;
-		m_v1 = Vertex(v.m_col + length, v.m_row);
-		m_v2 = Vertex(v.m_col + (length / 2), v.m_row);
+	EquilateralTriangle(v,
 
-		double height = getHeight();
-		m_v2.m_row += (isUp) ? height : -height;
-	}
-}
+					   (!length < 0) ? Vertex(v.m_col + length, v.m_row) 
+									 : Vertex(-1, -1),
+
+					   (!length < 0) ? Vertex(v.m_col + (length / 2),
+											  v.m_row + (isUp ? (length * TRIANGLE_HEIGHT_COEFFICIENT)
+															: - (length * TRIANGLE_HEIGHT_COEFFICIENT)))
+									 : Vertex(-1, -1)) { }
 
 // EquilateralTriangle only functions
 Vertex EquilateralTriangle::getVertex(int index) const

@@ -6,7 +6,9 @@ cmake_policy(SET CMP0009 NEW)
 file(GLOB NEW_GLOB LIST_DIRECTORIES false RELATIVE "C:/Users/f16it/source/repos/Shapes/include" "C:/Users/f16it/source/repos/Shapes/include/*.h")
 set(OLD_GLOB
   "Board.h"
+  "DoubleArrow.h"
   "EquilateralTriangle.h"
+  "Frame.h"
   "Rectangle.h"
   "Utilities.h"
   "Vertex.h"
@@ -21,7 +23,9 @@ endif()
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false RELATIVE "C:/Users/f16it/source/repos/Shapes/src" "C:/Users/f16it/source/repos/Shapes/src/*.cpp")
 set(OLD_GLOB
   "Board.cpp"
+  "DoubleArrow.cpp"
   "EquilateralTriangle.cpp"
+  "Frame.cpp"
   "Rectangle.cpp"
   "Utilities.cpp"
   "Vertex.cpp"
