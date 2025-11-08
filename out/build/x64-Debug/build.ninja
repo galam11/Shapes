@@ -57,7 +57,23 @@ build CMakeFiles\oop1_ex01_solution.dir\src\Board.cpp.obj: CXX_COMPILER__oop1_ex
   TARGET_COMPILE_PDB = CMakeFiles\oop1_ex01_solution.dir\
   TARGET_PDB = oop1_ex01_solution.pdb
 
+build CMakeFiles\oop1_ex01_solution.dir\src\DoubleArrow.cpp.obj: CXX_COMPILER__oop1_ex01_solution_unscanned_Debug C$:\Users\f16it\source\repos\Shapes\src\DoubleArrow.cpp || cmake_object_order_depends_target_oop1_ex01_solution
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi /W4 /permissive- /Zc:externConstexpr /Zc:inline /analyze /w14242 /w14263 /w14265 /w14287 /w14296 /w14545 /w14546 /w14547 /w14549 /w14555 /w14826 /w14905 /w14906 /w14928 /we4996 -fsanitize=address
+  INCLUDES = -IC:\Users\f16it\source\repos\Shapes\include
+  OBJECT_DIR = CMakeFiles\oop1_ex01_solution.dir
+  OBJECT_FILE_DIR = CMakeFiles\oop1_ex01_solution.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\oop1_ex01_solution.dir\
+  TARGET_PDB = oop1_ex01_solution.pdb
+
 build CMakeFiles\oop1_ex01_solution.dir\src\EquilateralTriangle.cpp.obj: CXX_COMPILER__oop1_ex01_solution_unscanned_Debug C$:\Users\f16it\source\repos\Shapes\src\EquilateralTriangle.cpp || cmake_object_order_depends_target_oop1_ex01_solution
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi /W4 /permissive- /Zc:externConstexpr /Zc:inline /analyze /w14242 /w14263 /w14265 /w14287 /w14296 /w14545 /w14546 /w14547 /w14549 /w14555 /w14826 /w14905 /w14906 /w14928 /we4996 -fsanitize=address
+  INCLUDES = -IC:\Users\f16it\source\repos\Shapes\include
+  OBJECT_DIR = CMakeFiles\oop1_ex01_solution.dir
+  OBJECT_FILE_DIR = CMakeFiles\oop1_ex01_solution.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\oop1_ex01_solution.dir\
+  TARGET_PDB = oop1_ex01_solution.pdb
+
+build CMakeFiles\oop1_ex01_solution.dir\src\Frame.cpp.obj: CXX_COMPILER__oop1_ex01_solution_unscanned_Debug C$:\Users\f16it\source\repos\Shapes\src\Frame.cpp || cmake_object_order_depends_target_oop1_ex01_solution
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi /W4 /permissive- /Zc:externConstexpr /Zc:inline /analyze /w14242 /w14263 /w14265 /w14287 /w14296 /w14545 /w14546 /w14547 /w14549 /w14555 /w14826 /w14905 /w14906 /w14928 /we4996 -fsanitize=address
   INCLUDES = -IC:\Users\f16it\source\repos\Shapes\include
   OBJECT_DIR = CMakeFiles\oop1_ex01_solution.dir
@@ -105,7 +121,7 @@ build CMakeFiles\oop1_ex01_solution.dir\src\main.cpp.obj: CXX_COMPILER__oop1_ex0
 #############################################
 # Link the executable oop1_ex01_solution.exe
 
-build oop1_ex01_solution.exe: CXX_EXECUTABLE_LINKER__oop1_ex01_solution_Debug CMakeFiles\oop1_ex01_solution.dir\src\Board.cpp.obj CMakeFiles\oop1_ex01_solution.dir\src\EquilateralTriangle.cpp.obj CMakeFiles\oop1_ex01_solution.dir\src\Rectangle.cpp.obj CMakeFiles\oop1_ex01_solution.dir\src\Utilities.cpp.obj CMakeFiles\oop1_ex01_solution.dir\src\Vertex.cpp.obj CMakeFiles\oop1_ex01_solution.dir\src\main.cpp.obj
+build oop1_ex01_solution.exe: CXX_EXECUTABLE_LINKER__oop1_ex01_solution_Debug CMakeFiles\oop1_ex01_solution.dir\src\Board.cpp.obj CMakeFiles\oop1_ex01_solution.dir\src\DoubleArrow.cpp.obj CMakeFiles\oop1_ex01_solution.dir\src\EquilateralTriangle.cpp.obj CMakeFiles\oop1_ex01_solution.dir\src\Frame.cpp.obj CMakeFiles\oop1_ex01_solution.dir\src\Rectangle.cpp.obj CMakeFiles\oop1_ex01_solution.dir\src\Utilities.cpp.obj CMakeFiles\oop1_ex01_solution.dir\src\Vertex.cpp.obj CMakeFiles\oop1_ex01_solution.dir\src\main.cpp.obj
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -MDd -Zi
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib

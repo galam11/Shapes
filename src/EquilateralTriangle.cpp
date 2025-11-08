@@ -25,7 +25,9 @@ EquilateralTriangle::EquilateralTriangle(const Vertex vertices[3]) :
 EquilateralTriangle::EquilateralTriangle(Vertex v, double length, bool isUp) :
 	m_v0(20, 20), m_v1(30, 20), m_v2(25, 20 + std::sqrt(75))
 {
-	if (length > 0)
+	if (!(length < 0) && 
+		!((v.m_col + length) > MAX_COL)) &&
+		!(())
 	{
 		m_v0 = v;
 		m_v1 = Vertex(v.m_col + length, v.m_row);
@@ -71,17 +73,13 @@ void EquilateralTriangle::draw(Board& board) const
 
 Rectangle EquilateralTriangle::getBoundingRectangle() const
 {
-	
-	//double height = getHeight();
-	double length = getLength();
-	double center_x = getCenter().m_col;
-	//double center_y = getCenter().m_row;
+	double min_x = minValue(m_v0.m_col, m_v1.m_col);
+	min_x = minValue(min_x, m_v2.m_col);
 
+	double min_y = minValue(m_v0.m_row, m_v1.m_row);
+	min_y = minValue(min_y, m_v2.m_row);
 
-	Vertex bottomLeft(center_x - (length / 2), center_y - (height / 2));
-	Vertex topRight(center_x + (length / 2), center_y + (height / 2));
-
-	return Rectangle(bottomLeft, topRight);
+	return Rectangle(min_x, min_y, getLength(), getHeight());
 }
 
 double EquilateralTriangle::getPerimeter() const

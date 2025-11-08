@@ -6,7 +6,9 @@
 			"paths" : 
 			[
 				"Board.h",
+				"DoubleArrow.h",
 				"EquilateralTriangle.h",
+				"Frame.h",
 				"Rectangle.h",
 				"Utilities.h",
 				"Vertex.h",
@@ -19,7 +21,9 @@
 			"paths" : 
 			[
 				"Board.cpp",
+				"DoubleArrow.cpp",
 				"EquilateralTriangle.cpp",
+				"Frame.cpp",
 				"Rectangle.cpp",
 				"Utilities.cpp",
 				"Vertex.cpp",
