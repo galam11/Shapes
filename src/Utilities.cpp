@@ -20,3 +20,13 @@ bool sameRow(const Vertex& v1, const Vertex& v2)
 {
     return doubleEqual(v1.m_row, v2.m_row);
 }
+
+double minValue(double a, double b)
+{
+    return (a < b) ? a : b;
+}
+
+double maxValue(double a, double b)
+{
+    return (a > b) ? a : b;
+}
