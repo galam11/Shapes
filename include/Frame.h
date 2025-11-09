@@ -21,6 +21,6 @@ public:
     double getArea() const;
     Vertex getCenter() const;
     bool scale(double factor);
-};
 
-bool validFrame(Rectangle outer, Rectangle inner);
+    bool validFrame(Rectangle outer, Rectangle inner);
+};

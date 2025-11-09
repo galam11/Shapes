@@ -31,7 +31,9 @@ public:
   double getArea() const;
   Vertex getCenter() const;
   bool scale(double factor);
+
+  // Rectangle utility functions
+  bool validRectangle(const Vertex& bottomLeft, const Vertex& topRight);
 };
 
-// Rectangle utility functions
-bool validRectangle(const Vertex& bottomLeft, const Vertex& topRight);
+

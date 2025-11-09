@@ -100,7 +100,7 @@ bool Rectangle::scale(double factor)
 }
 
 // Rectangle utility functions
-bool validRectangle(const Vertex& bottomLeft, const Vertex& topRight)
+bool Rectangle::validRectangle(const Vertex& bottomLeft, const Vertex& topRight)
 {
     return  topRight.isValid() &&
             bottomLeft.isValid() &&
