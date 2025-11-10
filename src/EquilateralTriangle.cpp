@@ -5,33 +5,30 @@
 #include "Rectangle.h"
 #include "EquilateralTriangle.h"
 #include "Utilities.h"
-#include <cmath>
 
 // Constructors
-EquilateralTriangle::EquilateralTriangle(Vertex v0, Vertex v1, Vertex v2) :
-	m_v0(20, 20), m_v1(30, 20), m_v2(25, 20 + DEFAULT_COEFFICIENT)
+EquilateralTriangle::EquilateralTriangle(Vertex v0, Vertex v1, Vertex v2) //האם להוסיף &?
 {
-	if (validEquilateralTriangle(v0, v1, v2))
-	{
-		m_v0 = v0;
-		m_v1 = v1;
-		m_v2 = v2;
-	}
+	setVertices(v0, v1, v2);
 }
 
 EquilateralTriangle::EquilateralTriangle(const Vertex vertices[3]) :
 	EquilateralTriangle(vertices[0], vertices[1], vertices[2]) { }
 
-EquilateralTriangle::EquilateralTriangle(Vertex v, double length, bool isUp) :  //האם לא ארוך מידי?
-	EquilateralTriangle(v,
+EquilateralTriangle::EquilateralTriangle(Vertex v, double length, bool isUp)
+{
+	Vertex v0, v1, v2;
+	v0 = v;
+	if (!length < 0)
+	{
+		v1 = Vertex(v.m_col + length, v.m_row);
 
-					   (!length < 0) ? Vertex(v.m_col + length, v.m_row) 
-									 : Vertex(-1, -1),
-
-					   (!length < 0) ? Vertex(v.m_col + (length / 2),
-											  v.m_row + (isUp ? (length * TRIANGLE_HEIGHT_COEFFICIENT)
-															: - (length * TRIANGLE_HEIGHT_COEFFICIENT)))
-									 : Vertex(-1, -1)) { }
+		double v2_y = v.m_row;
+		v2_y += (isUp ? 1 : -1) * (length * TRIANGLE_HEIGHT_COEFFICIENT);
+		v2 = Vertex(v.m_col + (length / 2), v2_y);
+	}
+	setVertices(v0, v1, v2);
+}
 
 // EquilateralTriangle only functions
 
@@ -64,7 +61,7 @@ void EquilateralTriangle::draw(Board& board) const
 {
 	board.drawLine(m_v0, m_v1);
 	board.drawLine(m_v0, m_v2);
-	board.drawLine(m_v2, m_v1);
+	board.drawLine(m_v1, m_v2);
 }
 
 Rectangle EquilateralTriangle::getBoundingRectangle() const
@@ -103,15 +100,7 @@ bool EquilateralTriangle::scale(double factor)
 	Vertex new_v1 = scalePoint(center, m_v1, factor);
 	Vertex new_v2 = scalePoint(center, m_v2, factor);
 
-	if (validEquilateralTriangle(new_v0, new_v1, new_v2))
-	{
-		m_v0 = new_v0;
-		m_v1 = new_v1;
-		m_v2 = new_v2;
-
-		return true;
-	}
-	return false;
+	return setVertices(new_v0, new_v1, new_v2);
 }
 
 // Private utility functions
@@ -138,4 +127,16 @@ bool EquilateralTriangle::validEquilateralTriangle(const Vertex& v0, const Verte
 	}
 
 	return true;
+}
+
+bool EquilateralTriangle::setVertices(Vertex& v0, Vertex& v1, Vertex& v2)
+{
+	if (validEquilateralTriangle(v0, v1, v2))
+	{
+		m_v0 = v0;
+		m_v1 = v1;
+		m_v2 = v2;
+		return true;
+	}
+	return false;
 }

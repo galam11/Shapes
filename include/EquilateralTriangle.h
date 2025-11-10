@@ -1,5 +1,6 @@
 ﻿#pragma once
 
+#include "macros.h"
 #include "Vertex.h"
 #include "Board.h"
 #include "Rectangle.h"
@@ -7,7 +8,9 @@
 class EquilateralTriangle {
 
 private: // Private members
-	Vertex m_v0, m_v1, m_v2;
+	Vertex m_v0 = Vertex(20, 20);
+	Vertex m_v1 = Vertex(30, 20);
+	Vertex m_v2 = Vertex(25, 20 + DEFAULT_COEFFICIENT);
 
 public:
 
@@ -32,5 +35,5 @@ public:
 	// Private utility functions
 private:
 	bool validEquilateralTriangle(const Vertex& v0, const Vertex& v1, const Vertex& v2);
-
+	bool setVertices(Vertex& v0, Vertex& v1, Vertex& v2);
 };

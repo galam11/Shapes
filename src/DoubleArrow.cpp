@@ -8,75 +8,56 @@
 #include "Utilities.h"
 
 // Constructors
-DoubleArrow::DoubleArrow (const EquilateralTriangle& first, const EquilateralTriangle& second) :
-	m_et0(Vertex(20, 20),
-		  Vertex(30, 20),
-		  Vertex(25, 20 + DEFAULT_COEFFICIENT)),
-	m_et1(Vertex(25, 20 + DEFAULT_COEFFICIENT),
-		  Vertex(25, 20 + DEFAULT_COEFFICIENT),
-		  Vertex(25, 20 + DEFAULT_COEFFICIENT)) 
+DoubleArrow::DoubleArrow (const EquilateralTriangle& first, const EquilateralTriangle& second)
 {
-	if (validDoubleArrow(first, second))
-	{
-		m_et0 = first;
-		m_et1 = second;
-	}
+	setTriangles(first, second);
 }
 
-DoubleArrow::DoubleArrow (const EquilateralTriangle& first, double length) :
-	m_et0(Vertex(20, 20),
-		Vertex(30, 20),
-		Vertex(25, 20 + DEFAULT_COEFFICIENT)),
-	m_et1(Vertex(25, 20 + DEFAULT_COEFFICIENT),
-		Vertex(25, 20 + DEFAULT_COEFFICIENT),
-		Vertex(25, 20 + DEFAULT_COEFFICIENT))
+DoubleArrow::DoubleArrow (const EquilateralTriangle& first, double length)
 {
-	Vertex first_tri_tip = getTriangleTip(first);
+	Vertex first_triangle_tip = getTriangleTip(first);
 
-	Vertex second_tri_left(first_tri_tip.m_col - (length / 2), first_tri_tip.m_row);
-	Vertex second_tri_right(first_tri_tip.m_col + (length / 2), first_tri_tip.m_row);
+	Vertex second_triangle_left(first_triangle_tip.m_col - (length / 2), first_triangle_tip.m_row);
+	Vertex second_triangle_right(first_triangle_tip.m_col + (length / 2), first_triangle_tip.m_row);
 
-	Vertex second_tri_tip(first_tri_tip.m_col, first_tri_tip.m_row);
-	double second_tri_height = TRIANGLE_HEIGHT_COEFFICIENT * length;
-	second_tri_tip.m_row += (triangleIsUp(first) ? second_tri_height : -second_tri_height);
+	double second_triangle_height = TRIANGLE_HEIGHT_COEFFICIENT * length;
+	double second_triangle_tip_y = first_triangle_tip.m_row;
+	second_triangle_tip_y += (triangleIsUp(first) ? 1 : -1) * second_triangle_height;
+	Vertex second_triangle_tip(first_triangle_tip.m_col, second_triangle_tip_y);
 
-	EquilateralTriangle second(second_tri_left, second_tri_right, second_tri_tip);
+	EquilateralTriangle second(second_triangle_left, second_triangle_right, second_triangle_tip);
 
-	if (validDoubleArrow(first, second))
-	{
-		m_et0 = first;
-		m_et1 = second;
-	}
+	setTriangles(first, second);
 }
 
 // DoubleArrow only functions
 double DoubleArrow::getLength(int index) const
 {
-	return (index == 0) ? m_et0.getLength() : m_et1.getLength();
+	return (index == 0) ? m_triangle0.getLength() : m_triangle1.getLength();
 }
 
 double DoubleArrow::getHeight(int index) const
 {
-	return (index == 0) ? m_et0.getHeight() : m_et1.getHeight();
+	return (index == 0) ? m_triangle0.getHeight() : m_triangle1.getHeight();
 }
 
 Vertex DoubleArrow::getConnection() const
 {
-	return getTriangleTip(m_et0);
+	return getTriangleTip(m_triangle0);
 }
 
 // All shapes functions
 
 void DoubleArrow::draw(Board& board) const
 {
-	m_et0.draw(board);
-	m_et1.draw(board);
+	m_triangle0.draw(board);
+	m_triangle1.draw(board);
 }
 
 Rectangle DoubleArrow::getBoundingRectangle() const
 {
-	Rectangle rect0 = m_et0.getBoundingRectangle();
-	Rectangle rect1 = m_et1.getBoundingRectangle();
+	Rectangle rect0 = m_triangle0.getBoundingRectangle();
+	Rectangle rect1 = m_triangle1.getBoundingRectangle();
 
 	double min_x = minValue(rect0.getBottomLeft().m_col, rect1.getBottomLeft().m_col);
 	double min_y = minValue(rect0.getBottomLeft().m_row, rect1.getBottomLeft().m_row);
@@ -89,18 +70,18 @@ Rectangle DoubleArrow::getBoundingRectangle() const
 
 double DoubleArrow::getPerimeter() const
 {
-	return m_et0.getPerimeter() + m_et1.getPerimeter();
+	return m_triangle0.getPerimeter() + m_triangle1.getPerimeter();
 }
 
 double DoubleArrow::getArea() const
 {
-	return m_et0.getArea() + m_et1.getArea();
+	return m_triangle0.getArea() + m_triangle1.getArea();
 }
 
 Vertex DoubleArrow::getCenter() const
 {
-	Vertex center0 = m_et0.getCenter();
-	Vertex center1 = m_et1.getCenter();
+	Vertex center0 = m_triangle0.getCenter();
+	Vertex center1 = m_triangle1.getCenter();
 
 	double new_center_x = (center0.m_col + center1.m_col) / 2;
 	double new_center_y = (center0.m_row + center1.m_row) / 2;
@@ -112,47 +93,41 @@ bool DoubleArrow::scale(double factor)
 {
 	Vertex connection_point = getConnection();
 
-	Vertex new_et0_v0 = scalePoint(connection_point, m_et0.getVertex(0), factor);
-	Vertex new_et0_v1 = scalePoint(connection_point, m_et0.getVertex(1), factor);
-	Vertex new_et0_v2 = scalePoint(connection_point, m_et0.getVertex(2), factor);
-	EquilateralTriangle new_et0(new_et0_v0, new_et0_v1, new_et0_v2);
+	Vertex new_triangle0_v0 = scalePoint(connection_point, m_triangle0.getVertex(0), factor);
+	Vertex new_triangle0_v1 = scalePoint(connection_point, m_triangle0.getVertex(1), factor);
+	Vertex new_triangle0_v2 = scalePoint(connection_point, m_triangle0.getVertex(2), factor);
+	EquilateralTriangle new_triangle0(new_triangle0_v0, new_triangle0_v1, new_triangle0_v2);
 
-	Vertex new_et1_v0 = scalePoint(connection_point, m_et1.getVertex(0), factor);
-	Vertex new_et1_v1 = scalePoint(connection_point, m_et1.getVertex(1), factor);
-	Vertex new_et1_v2 = scalePoint(connection_point, m_et1.getVertex(2), factor);
-	EquilateralTriangle new_et1(new_et1_v0, new_et1_v1, new_et1_v2);
+	Vertex new_triangle1_v0 = scalePoint(connection_point, m_triangle1.getVertex(0), factor);
+	Vertex new_triangle1_v1 = scalePoint(connection_point, m_triangle1.getVertex(1), factor);
+	Vertex new_triangle1_v2 = scalePoint(connection_point, m_triangle1.getVertex(2), factor);
+	EquilateralTriangle new_triangle1(new_triangle1_v0, new_triangle1_v1, new_triangle1_v2);
 
-	if (validDoubleArrow(new_et0, new_et1))
-	{
-		m_et0 = new_et0;
-		m_et1 = new_et1;
-
-		return true;
-	}
-	return false;
+	return setTriangles(new_triangle0, new_triangle1);
 }
 
-bool DoubleArrow::validDoubleArrow(const EquilateralTriangle& et0, const EquilateralTriangle& et1)
+bool DoubleArrow::validDoubleArrow(const EquilateralTriangle& triangle0, const EquilateralTriangle& triangle1)
 {
-	bool et0_isUp = triangleIsUp(et0);
-	bool et1_isUp = triangleIsUp(et1);
+	bool triangle0_isUp = triangleIsUp(triangle0);
+	bool triangle1_isUp = triangleIsUp(triangle1);
 
-	if (et0_isUp != et1_isUp)
+	if (triangle0_isUp != triangle1_isUp)
 	{
 		return false;
 	}
 
-	Vertex et0_tip = getTriangleTip(et0);
-	Vertex et1_tip = getTriangleTip(et1);
+	Vertex triangle0_tip = getTriangleTip(triangle0);
+	Vertex triangle1_tip = getTriangleTip(triangle1);
 
-	if (!doubleEqual(et0_tip.m_col, et1_tip.m_col))
+	if (!doubleEqual(triangle0_tip.m_col, triangle1_tip.m_col))
 	{
 		return false;
 	}
 
-	double et1_base_height = et1_tip.m_row + (et1_isUp) ? -(et1.getHeight()) : et1.getHeight();
+	double triangle1_base_height = triangle1_tip.m_row;
+	triangle1_base_height += (triangle1_isUp ? -1 : 1) * triangle1.getHeight();
 
-	if (!doubleEqual(et1_base_height, et0_tip.m_row))
+	if (!doubleEqual(triangle1_base_height, triangle0_tip.m_row))
 	{
 		return false;
 	}
@@ -189,5 +164,17 @@ bool DoubleArrow::triangleIsUp(const EquilateralTriangle& triangle)
 	Vertex center = triangle.getCenter();
 	Vertex tip = getTriangleTip(triangle);
 
-	return (tip.isHigherThan(center)) ? true : false;
+	return tip.isHigherThan(center);
+}
+
+bool DoubleArrow::setTriangles(const EquilateralTriangle& triangle0, const EquilateralTriangle& triangle1)
+{
+	if (validDoubleArrow(triangle0, triangle1))
+	{
+		m_triangle0 = triangle0;
+		m_triangle1 = triangle1;
+
+		return true;
+	}
+	return false;
 }

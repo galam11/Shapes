@@ -8,7 +8,13 @@
 class DoubleArrow
 {
 private: // Private members
-    EquilateralTriangle m_et0, m_et1;
+    EquilateralTriangle m_triangle0 = EquilateralTriangle(Vertex(20, 20),
+                                                          Vertex(30, 20),
+                                                          Vertex(25, 20 + DEFAULT_COEFFICIENT));
+
+    EquilateralTriangle m_triangle1 = EquilateralTriangle(Vertex(25, 20 + DEFAULT_COEFFICIENT),
+                                                          Vertex(25, 20 + DEFAULT_COEFFICIENT),
+                                                          Vertex(25, 20 + DEFAULT_COEFFICIENT));
 
 public:
 
@@ -33,6 +39,7 @@ public:
 private:
 
     Vertex getTriangleTip(const EquilateralTriangle& triangle) const;
-    bool validDoubleArrow(const EquilateralTriangle& et0, const EquilateralTriangle& et1);
+    bool validDoubleArrow(const EquilateralTriangle& triangle0, const EquilateralTriangle& triangle1);
     bool triangleIsUp(const EquilateralTriangle& triangle);
+    bool setTriangles(const EquilateralTriangle& triangle0, const EquilateralTriangle& triangle1);
 };
