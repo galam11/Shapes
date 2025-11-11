@@ -60,7 +60,7 @@ void Rectangle::draw(Board& board) const
 
 Rectangle Rectangle::getBoundingRectangle() const
 {
-    // same as it self
+    // same as itself
     return Rectangle(m_bottomLeft, m_topRight);
 }
 
@@ -102,9 +102,8 @@ bool Rectangle::scale(double factor)
 // Rectangle utility functions
 bool Rectangle::validRectangle(const Vertex& bottomLeft, const Vertex& topRight)
 {
-    return  topRight.isValid() &&
-            bottomLeft.isValid() &&
-            topRight.isToTheRightOf(bottomLeft) &&
-            topRight.isHigherThan(bottomLeft);
+    return  topRight.isValid() && bottomLeft.isValid() &&
+            !bottomLeft.isToTheRightOf(topRight) &&
+            !bottomLeft.isHigherThan(topRight);
 }
 
