@@ -19,7 +19,7 @@ public:
     double getWidth() const;
     double getHeight() const;
 
-    // non specific functions
+    // non shape-specific functions
     void draw(Board &board) const;
     Rectangle getBoundingRectangle() const;
     double getPerimeter() const;
@@ -36,6 +36,6 @@ private:
 
     // Rectangle private utility function
     bool validRectangle(const Vertex &bottomLeft, const Vertex &topRight);
-    bool setRectangle(const Vertex &bottomLeft, const Vertex &topRight);
+    bool setVertices(const Vertex &bottomLeft, const Vertex &topRight);
 
 };

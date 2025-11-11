@@ -77,7 +77,7 @@ bool Frame::scale(double factor)
     return false;
 }
 
-bool Frame::validFrame(Rectangle outer, Rectangle inner)
+bool Frame::validFrame(const Rectangle& outer, const Rectangle& inner)
 {
 	double widthDiff = outer.getWidth() - inner.getWidth();
     double hightDiff = outer.getHeight() - inner.getHeight();

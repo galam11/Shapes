@@ -19,7 +19,7 @@ public:
 	double getLength() const;
 	double getHeight() const;
 
-	// non specific functions
+	// non shape-specific functions
 	void draw(Board& board) const;
 	Rectangle getBoundingRectangle() const;
 	double getPerimeter() const;

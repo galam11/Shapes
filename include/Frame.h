@@ -15,7 +15,7 @@ public:
     Vertex getTopRight() const;
     double getThickness() const;
 
-    // non specific functions
+    // non shape-specific functions
     void draw(Board &board) const;
     Rectangle getBoundingRectangle() const;
     double getPerimeter() const;
