@@ -7,20 +7,6 @@
 
 class DoubleArrow
 {
-    // Private members
-    EquilateralTriangle m_triangle0 = EquilateralTriangle(Vertex(20, 20),
-                                                          Vertex(30, 20),
-                                                          Vertex(25, 20 + DEFAULT_COEFFICIENT));
-
-    EquilateralTriangle m_triangle1 = EquilateralTriangle(Vertex(25, 20 + DEFAULT_COEFFICIENT),
-                                                          Vertex(25, 20 + DEFAULT_COEFFICIENT),
-                                                          Vertex(25, 20 + DEFAULT_COEFFICIENT));
-
-    // Private utility functions
-    Vertex getTriangleTip(const EquilateralTriangle& triangle) const;
-    bool validDoubleArrow(const EquilateralTriangle& triangle0, const EquilateralTriangle& triangle1);
-    bool triangleIsUp(const EquilateralTriangle& triangle);
-    bool setTriangles(const EquilateralTriangle& triangle0, const EquilateralTriangle& triangle1);
 
 public:
 
@@ -28,12 +14,12 @@ public:
     DoubleArrow (const EquilateralTriangle& first, const EquilateralTriangle& second);
     DoubleArrow (const EquilateralTriangle& first, double length);
 
-    // DoubleArrow only functions
+    // DoubleArrow specific functions
     double getLength(int index) const;
     double getHeight(int index) const;
     Vertex getConnection() const;
 
-    // All shapes functions
+    // non specific functions
     void draw(Board& board) const;
     Rectangle getBoundingRectangle() const;
     double getPerimeter() const;
@@ -41,5 +27,21 @@ public:
     Vertex getCenter() const;
     bool scale(double factor);
 
+
+private:
+    // Private members
+    EquilateralTriangle m_triangle0 = EquilateralTriangle(Vertex(20, 20),
+        Vertex(30, 20),
+        Vertex(25, 20 + DEFAULT_COEFFICIENT));
+
+    EquilateralTriangle m_triangle1 = EquilateralTriangle(Vertex(25, 20 + DEFAULT_COEFFICIENT),
+        Vertex(25, 20 + DEFAULT_COEFFICIENT),
+        Vertex(25, 20 + DEFAULT_COEFFICIENT));
+
+    // Private utility functions
+    Vertex getTriangleTip(const EquilateralTriangle& triangle) const;
+    bool validDoubleArrow(const EquilateralTriangle& triangle0, const EquilateralTriangle& triangle1);
+    bool triangleIsUp(const EquilateralTriangle& triangle);
+    bool setTriangles(const EquilateralTriangle& triangle0, const EquilateralTriangle& triangle1);
 
 };
