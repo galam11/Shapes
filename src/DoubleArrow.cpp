@@ -3,7 +3,6 @@
 #include "Vertex.h"
 #include "Rectangle.h"
 #include "EquilateralTriangle.h"
-#include <cmath>
 #include "macros.h"
 #include "Utilities.h"
 
