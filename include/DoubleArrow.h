@@ -7,7 +7,7 @@
 
 class DoubleArrow
 {
-private: // Private members
+    // Private members
     EquilateralTriangle m_triangle0 = EquilateralTriangle(Vertex(20, 20),
                                                           Vertex(30, 20),
                                                           Vertex(25, 20 + DEFAULT_COEFFICIENT));
@@ -15,6 +15,12 @@ private: // Private members
     EquilateralTriangle m_triangle1 = EquilateralTriangle(Vertex(25, 20 + DEFAULT_COEFFICIENT),
                                                           Vertex(25, 20 + DEFAULT_COEFFICIENT),
                                                           Vertex(25, 20 + DEFAULT_COEFFICIENT));
+
+    // Private utility functions
+    Vertex getTriangleTip(const EquilateralTriangle& triangle) const;
+    bool validDoubleArrow(const EquilateralTriangle& triangle0, const EquilateralTriangle& triangle1);
+    bool triangleIsUp(const EquilateralTriangle& triangle);
+    bool setTriangles(const EquilateralTriangle& triangle0, const EquilateralTriangle& triangle1);
 
 public:
 
@@ -35,11 +41,5 @@ public:
     Vertex getCenter() const;
     bool scale(double factor);
 
-    // Private utility functions
-private:
 
-    Vertex getTriangleTip(const EquilateralTriangle& triangle) const;
-    bool validDoubleArrow(const EquilateralTriangle& triangle0, const EquilateralTriangle& triangle1);
-    bool triangleIsUp(const EquilateralTriangle& triangle);
-    bool setTriangles(const EquilateralTriangle& triangle0, const EquilateralTriangle& triangle1);
 };
