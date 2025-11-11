@@ -4,6 +4,7 @@
 
 class Frame
 {
+    // Private members
     Rectangle m_inner = Rectangle(Vertex(10, 20), Vertex(20, 30));
     Rectangle m_outer = Rectangle(Vertex(10, 20), Vertex(20, 30));
 

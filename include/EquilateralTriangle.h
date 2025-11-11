@@ -5,7 +5,8 @@
 #include "Board.h"
 #include "Rectangle.h"
 
-class EquilateralTriangle {
+class EquilateralTriangle
+{
 
 	// Private members
 	Vertex m_v0 = Vertex(20, 20);
