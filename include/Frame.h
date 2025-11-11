@@ -29,6 +29,6 @@ private:
     Rectangle m_outer = Rectangle(Vertex(10, 20), Vertex(20, 30));
 
     //private utility function
-    bool validFrame(Rectangle outer, Rectangle inner);
-
+    bool validFrame(const Rectangle& outer, const Rectangle& inner);
+    bool setRectangles(const Rectangle& outer, const Rectangle& inner);
 };

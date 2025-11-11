@@ -7,7 +7,7 @@
 #include "Utilities.h"
 
 // Constructors
-EquilateralTriangle::EquilateralTriangle(Vertex v0, Vertex v1, Vertex v2)
+EquilateralTriangle::EquilateralTriangle(const Vertex& v0, const Vertex& v1, const Vertex& v2)
 {
 	setVertices(v0, v1, v2);
 }
@@ -15,7 +15,7 @@ EquilateralTriangle::EquilateralTriangle(Vertex v0, Vertex v1, Vertex v2)
 EquilateralTriangle::EquilateralTriangle(const Vertex vertices[3]) :
 	EquilateralTriangle(vertices[0], vertices[1], vertices[2]) { }
 
-EquilateralTriangle::EquilateralTriangle(Vertex v, double length, bool isUp)
+EquilateralTriangle::EquilateralTriangle(const Vertex& v, double length, bool isUp)
 {
 	Vertex v0, v1, v2;
 	v0 = v;
@@ -129,7 +129,7 @@ bool EquilateralTriangle::validEquilateralTriangle(const Vertex& v0, const Verte
 	return true;
 }
 
-bool EquilateralTriangle::setVertices(Vertex& v0, Vertex& v1, Vertex& v2)
+bool EquilateralTriangle::setVertices(const Vertex& v0, const Vertex& v1, const Vertex& v2)
 {
 	if (validEquilateralTriangle(v0, v1, v2))
 	{

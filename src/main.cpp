@@ -9,13 +9,14 @@
 #include "Board.h"
 
 #define RECTANGLE            0
-#define EQUILATERAL_TRIANGLE 0
+#define EQUILATERAL_TRIANGLE 1
 #define FRAME                0
-#define DOUBLE_ARROW         1
+#define DOUBLE_ARROW         0
 
 #if RECTANGLE
 #include "Rectangle.h"
-void printInfo(const Rectangle&);
+
+void printInfo(const Rectangle &);
 #endif
 
 #if EQUILATERAL_TRIANGLE
@@ -34,16 +35,17 @@ void printInfo(const DoubleArrow&);
 #endif
 
 void waitForEnter();
+
 Vertex readVertex(std::string_view vertexName, std::string_view shapeName);
 
-template <typename Shape>
-void useShape(Shape& shape, std::string_view shapeName);
+template<typename Shape>
+void useShape(Shape &shape, std::string_view shapeName);
 
-template <typename Shape>
-void draw(const Shape& shape, Board&);
+template<typename Shape>
+void draw(const Shape &shape, Board &);
 
-template <typename Shape>
-void printGenericInfo(const Shape& shape, std::string_view shapeName);
+template<typename Shape>
+void printGenericInfo(const Shape &shape, std::string_view shapeName);
 
 int main()
 {
@@ -52,10 +54,10 @@ int main()
         static constexpr auto shapeName = std::string_view("rectangle");
 
         const auto vertices = std::array<Vertex, 2>
-        {
-            readVertex("bottom-left", shapeName),
-            readVertex("top-right", shapeName)
-        };
+                {
+                    readVertex("bottom-left", shapeName),
+                    readVertex("top-right", shapeName)
+                };
 
         std::cin.ignore(); // ignore the enter
 
@@ -136,11 +138,11 @@ int main()
 }
 
 #if RECTANGLE
-void printInfo(const Rectangle& rectangle)
+void printInfo(const Rectangle &rectangle)
 {
     static constexpr auto shapeName = std::string_view("rectangle");
 
-    const auto printVertex = [](const Vertex& v, std::string_view vertexName)
+    const auto printVertex = [](const Vertex &v, std::string_view vertexName)
     {
         std::println("The {} vertex of the {} is: {}", vertexName, shapeName, v);
     };
@@ -214,14 +216,14 @@ void waitForEnter()
 Vertex readVertex(std::string_view vertexName, std::string_view shapeName)
 {
     std::println("Please enter x and y coordinates for the {} vertex of the {}:",
-        vertexName, shapeName);
+                 vertexName, shapeName);
     auto v = Vertex();
     std::cin >> v;
     return v;
 }
 
 template<typename Shape>
-void useShape(Shape& shape, std::string_view shapeName)
+void useShape(Shape &shape, std::string_view shapeName)
 {
     auto board = Board();
     auto print = [&]
@@ -239,8 +241,7 @@ void useShape(Shape& shape, std::string_view shapeName)
     if (shape.scale(2))
     {
         print();
-    }
-    else
+    } else
     {
         std::cout << "Scaling failed!\n";
         waitForEnter();
@@ -248,7 +249,7 @@ void useShape(Shape& shape, std::string_view shapeName)
 }
 
 template<typename Shape>
-void draw(const Shape& shape, Board& board)
+void draw(const Shape &shape, Board &board)
 {
     shape.draw(board);
     board.print();
@@ -262,14 +263,14 @@ void draw(const Shape& shape, Board& board)
 }
 
 template<typename Shape>
-void printGenericInfo(const Shape& shape, std::string_view shapeName)
+void printGenericInfo(const Shape &shape, std::string_view shapeName)
 {
     std::println("The perimeter of the {} is: {}",
-        shapeName, shape.getPerimeter());
+                 shapeName, shape.getPerimeter());
 
     std::println("The area of the {} is: {}",
-        shapeName, shape.getArea());
+                 shapeName, shape.getArea());
 
     std::println("The center of the {} is: {}",
-        shapeName, shape.getCenter());
+                 shapeName, shape.getCenter());
 }
