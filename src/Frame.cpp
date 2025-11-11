@@ -5,11 +5,7 @@
 
 Frame::Frame(const Rectangle& outer, const Rectangle& inner)
 {
-	if (validFrame(outer, inner))
-    {
-    	m_outer = outer;
-        m_inner = inner;
-    }
+	setRectangles(outer, inner);
 }
 
 // constracts the inner rect using the outer's center
@@ -86,10 +82,21 @@ bool Frame::validFrame(const Rectangle& outer, const Rectangle& inner)
 	Vertex centerInner = inner.getCenter();
 
     // checks if diff between the widths and the heights of the rect are the same
-    // and if the diff it self is greater or equal to zero
+    // and if the diff is greater or equal to zero
     // and if both rects have the same points
     return widthDiff >= 0
            && doubleEqual(widthDiff, hightDiff)
            && doubleEqual(centerOuter.m_col,centerInner.m_col)
            && doubleEqual(centerOuter.m_row, centerInner.m_row);
+}
+
+bool Frame::setRectangles(const Rectangle& outer, const Rectangle& inner)
+{
+	if (validFrame(outer, inner))
+	{
+		m_outer = outer;
+		m_inner = inner;
+		return true;
+	}
+	return false;
 }
