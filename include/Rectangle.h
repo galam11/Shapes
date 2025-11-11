@@ -27,6 +27,8 @@ public:
     Vertex getCenter() const;
     bool scale(double factor);
 
+
+
 private:
     // Private members
     Vertex m_bottomLeft = Vertex(20, 10);
@@ -34,5 +36,6 @@ private:
 
     // Rectangle private utility function
     bool validRectangle(const Vertex &bottomLeft, const Vertex &topRight);
+    bool setRectangle(const Vertex &bottomLeft, const Vertex &topRight);
 
 };

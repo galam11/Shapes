@@ -6,11 +6,7 @@
 // Constructors
 Rectangle::Rectangle(const Vertex& bottomLeft, const Vertex& topRight)
 {
-    if (validRectangle(bottomLeft, topRight))
-    {
-        m_bottomLeft = bottomLeft;
-        m_topRight = topRight;
-    }
+    setRectangle(bottomLeft, topRight);
 }
 Rectangle::Rectangle(const Vertex vertices[2]) :
     Rectangle(vertices[0], vertices[1]) { }
@@ -90,13 +86,7 @@ bool Rectangle::scale(double factor)
     Vertex newBottomLeft = scalePoint(center, m_bottomLeft, factor);
 
    //applay the scail if the scaild rect is a valid one
-   if (validRectangle(newBottomLeft, newTopRight))
-   {
-       m_topRight = newTopRight;
-       m_bottomLeft = newBottomLeft;
-       return true;
-   }
-   return false;
+    return setRectangle(newBottomLeft, newTopRight);
 }
 
 // Rectangle utility functions
@@ -107,3 +97,13 @@ bool Rectangle::validRectangle(const Vertex& bottomLeft, const Vertex& topRight)
             !bottomLeft.isHigherThan(topRight);
 }
 
+bool Rectangle::setRectangle(const Vertex &bottomLeft, const Vertex &topRight)
+{
+    if (validRectangle(bottomLeft, topRight))
+    {
+        m_topRight = topRight;
+        m_bottomLeft = bottomLeft;
+        return true;
+    }
+    return false;
+}

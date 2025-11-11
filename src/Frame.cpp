@@ -27,13 +27,12 @@ Frame::Frame(const Rectangle& outer, double thickness) :
 
 Vertex Frame::getBottomLeft() const
 {
-    //botom left same as the outter rect
+
 	return m_outer.getBottomLeft();
 }
 
 Vertex Frame::getTopRight() const
 {
-    //top right same as outter rect
 	return m_outer.getTopRight();
 }
 

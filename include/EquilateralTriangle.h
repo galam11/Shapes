@@ -11,8 +11,8 @@ class EquilateralTriangle
 public:
 	// Constructors
 	EquilateralTriangle(const Vertex vertices[3]);
-	EquilateralTriangle(Vertex v0, Vertex v1, Vertex v2);
-	EquilateralTriangle(Vertex v, double length, bool isUp);
+	EquilateralTriangle(const Vertex& v0, const Vertex& v1,const Vertex& v2);
+	EquilateralTriangle(const Vertex& v, double length, bool isUp);
 
 	// EquilateralTriangle specific functions
 	Vertex getVertex(int index) const;
@@ -35,6 +35,6 @@ private:
 
 	// Private utility functions
 	bool validEquilateralTriangle(const Vertex& v0, const Vertex& v1, const Vertex& v2);
-	bool setVertices(Vertex& v0, Vertex& v1, Vertex& v2);
+	bool setVertices(const Vertex& v0,const Vertex& v1,const Vertex& v2);
 
 };
