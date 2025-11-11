@@ -10,8 +10,8 @@
 
 #define RECTANGLE            0
 #define EQUILATERAL_TRIANGLE 0
-#define FRAME                1
-#define DOUBLE_ARROW         0
+#define FRAME                0
+#define DOUBLE_ARROW         1
 
 #if RECTANGLE
 #include "Rectangle.h"
